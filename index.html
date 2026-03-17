@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Disperindag Jabar — Dinas Perindustrian dan Perdagangan Provinsi Jawa Barat</title>
+<meta name="google-site-verification" content="SrTZawFSaLAONuV52vjH13dAEw3zOeO0J7W9G7wwpi8" />
+<link rel="icon" type="image/png" href="https://d2s1u1uyrl4yfi.cloudfront.net/disperindag/favicon/2afe42a215a16f7242aaa847e7cc6247.webp">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --navy:#003087;--navy2:#004AB5;--blue:#0062CC;--blue2:#1a7fe8;
+  --gold:#FFB300;--gold2:#FFC933;--red:#D32F2F;--green:#2E7D32;
+  --white:#FFFFFF;--light:#F5F7FA;--border:#E0E4EC;
+  --text:#1C2B4A;--muted:#6B7A99;--dark:#0A1628;
+}
+body{font-family:'Open Sans',sans-serif;font-size:14px;color:var(--text);background:#fff;line-height:1.5}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* TOPBAR */
+.topbar{background:var(--navy);color:#fff;font-size:12px;border-bottom:2px solid var(--gold)}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;padding-top:6px;padding-bottom:6px}
+.topbar-left{display:flex;align-items:center}
+.topbar-left a{color:rgba(255,255,255,.85);padding:4px 12px;border-right:1px solid rgba(255,255,255,.2);font-size:12px;display:flex;align-items:center;gap:5px;transition:color .2s}
+.topbar-left a:first-child{padding-left:0}
+.topbar-left a:hover{color:#fff}
+.topbar-right{display:flex;align-items:center;gap:6px}
+.socials{display:flex;align-items:center;gap:4px;margin-right:6px}
+.socials a{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;transition:background .2s}
+.socials a:hover{background:var(--gold);color:var(--navy)}
+.btn-wbs{background:var(--red);color:#fff;padding:4px 10px;border-radius:3px;font-size:11px;font-weight:700}
+.btn-ppid{background:var(--gold);color:var(--navy);padding:4px 10px;border-radius:3px;font-size:11px;font-weight:700}
+
+/* HEADER */
+.header{background:#54657b;box-shadow:0 2px 12px rgba(0,30,87,.10);position:sticky;top:0;z-index:300}
+.header .hinner{max-width:1200px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between}
+.header-brand{display:flex;align-items:center;gap:14px}
+.logo-wrap{width:72px;height:72px;flex-shrink:0;object-fit:contain}
+.brand-text .bn{font-family:'Roboto',sans-serif;font-size:17px;font-weight:700;color:var(--navy);text-transform:uppercase;line-height:1.25;letter-spacing:.2px}
+.brand-text .bs{font-size:12px;color:#ffffff;margin-top:2px}
+.brand-text .bt{font-size:11px;color:#003087;font-style:italic;margin-top:1px}
+.header-right{display:flex;align-items:center;gap:10px}
+.h-srch{display:flex;border:1.5px solid var(--border);border-radius:5px;overflow:hidden;transition:border-color .2s}
+.h-srch:focus-within{border-color:var(--blue)}
+.h-srch input{border:none;outline:none;padding:8px 13px;font-size:13px;width:220px;font-family:'Open Sans',sans-serif;color:var(--text)}
+.h-srch button{background:var(--navy);color:#fff;border:none;padding:8px 15px;cursor:pointer;font-size:13px;transition:background .2s}
+.h-srch button:hover{background:var(--blue)}
+.h-logos{display:flex;align-items:center;gap:8px}
+.lp{width:44px;height:44px;border-radius:50%;background:var(--light);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:var(--navy);text-align:center;line-height:1.2;padding:4px}
+
+/* NAVBAR */
+.navbar{background:var(--navy);border-top:3px solid var(--gold)}
+.navbar .ninner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:stretch}
+.nav-home{background:var(--gold);color:var(--navy)!important;font-weight:700;padding:0 18px;display:flex;align-items:center;gap:6px;font-size:13px;flex-shrink:0;transition:background .2s}
+.nav-home:hover{background:var(--gold2)}
+.nav-items{display:flex;flex:1;align-items:stretch}
+.ni{position:relative}
+.ni>a{display:flex;align-items:center;gap:4px;color:rgba(255,255,255,.92);padding:0 14px;height:44px;font-size:13px;font-weight:600;white-space:nowrap;transition:background .2s,color .2s}
+.ni>a:hover{background:rgba(255,255,255,.12);color:#fff}
+.ni>a .fa-chevron-down{font-size:9px;opacity:.7}
+.drop,.drop-wide{display:none;position:absolute;top:100%;left:0;z-index:500;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,.15);border-top:3px solid var(--gold);border-radius:0 0 4px 4px}
+.drop{min-width:230px}
+.drop-wide{min-width:500px;flex-direction:row}
+.ni:hover>.drop{display:block}
+.ni:hover>.drop-wide{display:flex}
+.drop a{display:flex;align-items:center;gap:8px;padding:9px 16px;color:var(--text);font-size:13px;border-bottom:1px solid #f0f2f7;transition:background .15s,color .15s,padding .15s}
+.drop a:last-child{border-bottom:none}
+.drop a:hover{background:var(--light);color:var(--blue);padding-left:20px}
+.drop a i{font-size:10px;color:var(--gold);flex-shrink:0}
+.dcol{flex:1;padding:8px 0;border-right:1px solid var(--border)}
+.dcol:last-child{border-right:none}
+.dcol a{display:flex;align-items:center;gap:8px;padding:8px 16px;color:var(--text);font-size:12.5px;border-bottom:1px solid #f5f5f5;transition:background .15s,color .15s,padding .15s}
+.dcol a:hover{background:var(--light);color:var(--blue);padding-left:20px}
+.dcol a i{font-size:10px;color:var(--gold)}
+.dgl{display:block;padding:7px 16px 4px!important;font-size:10px!important;font-weight:700!important;color:var(--muted)!important;text-transform:uppercase!important;letter-spacing:1px!important;background:var(--light)!important;border-bottom:1px solid var(--border)!important;cursor:default!important}
+.dgl:hover{padding-left:16px!important;color:var(--muted)!important}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:var(--dark)}
+.hero-track{display:flex;transition:transform .7s cubic-bezier(.4,0,.2,1)}
+.hero-slide{min-width:100%;height:440px;position:relative;display:flex;align-items:center;overflow:hidden}
+.s-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.s-ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,30,87,.83) 0%,rgba(0,30,87,.44) 55%,rgba(0,30,87,.08) 100%)}
+.s-cnt{position:relative;z-index:2;padding:0 60px;max-width:650px;color:#fff}
+.s-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:2px;margin-bottom:14px}
+.s-cnt h2{font-family:'Roboto',sans-serif;font-size:30px;font-weight:700;line-height:1.3;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.3)}
+.s-cnt p{font-size:14px;opacity:.9;line-height:1.7;margin-bottom:22px;max-width:480px}
+.s-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);padding:10px 24px;border-radius:3px;font-weight:700;font-size:13px;transition:background .2s,transform .2s}
+.s-btn:hover{background:var(--gold2);transform:translateY(-2px)}
+.slide-1 .s-bg{background:linear-gradient(135deg,#0a1f5c 0%,#1565C0 40%,#0D47A1 70%,#003087 100%)}
+.slide-2 .s-bg{background:linear-gradient(135deg,#1a2744 0%,#1a6b3c 40%,#155724 70%,#0a2e18 100%)}
+.slide-3 .s-bg{background:linear-gradient(135deg,#2c1654 0%,#6a1b9a 40%,#4a148c 70%,#1a0533 100%)}
+.s-deco{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.05) 0%,transparent 70%);z-index:1}
+.hero-prev,.hero-next{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.15);color:#fff;border:2px solid rgba(255,255,255,.3);width:44px;height:44px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;backdrop-filter:blur(4px)}
+.hero-prev:hover,.hero-next:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.hero-prev{left:20px}.hero-next{right:20px}
+.hero-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
+.hd{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);border:none;cursor:pointer;transition:all .3s}
+.hd.on{background:var(--gold);width:24px;border-radius:4px}
+.htstrip{position:absolute;right:20px;bottom:20px;display:flex;flex-direction:column;gap:6px;z-index:10}
+.ht{width:80px;height:50px;border-radius:3px;overflow:hidden;border:2px solid rgba(255,255,255,.2);cursor:pointer;transition:border-color .2s}
+.ht.on{border-color:var(--gold)}
+.htbg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(255,255,255,.45)}
+.htbg.t1{background:linear-gradient(135deg,#0a1f5c,#1565C0)}
+.htbg.t2{background:linear-gradient(135deg,#1a2744,#1a6b3c)}
+.htbg.t3{background:linear-gradient(135deg,#2c1654,#6a1b9a)}
+
+/* TICKER */
+.ticker{background:var(--gold);padding:8px 0;overflow:hidden;border-top:1px solid rgba(0,0,0,.08)}
+.ticker .container{display:flex;align-items:center}
+.tk-label{background:var(--navy);color:#fff;padding:3px 14px;border-radius:2px;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0;margin-right:14px;text-transform:uppercase;letter-spacing:.5px}
+.tk-wrap{overflow:hidden;flex:1}
+.tk-inner{display:flex;white-space:nowrap;animation:tscroll 40s linear infinite}
+.tk-inner:hover{animation-play-state:paused}
+.tk-item{font-size:12px;font-weight:600;color:var(--navy);padding:0 28px;flex-shrink:0}
+.tk-item::before{content:"●";margin-right:8px;font-size:8px}
+@keyframes tscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* QUICK ACCESS */
+.qa{background:var(--navy);padding:14px 0}
+.qa-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden}
+.qa-item{background:rgba(255,255,255,.05);padding:14px 10px;text-align:center;cursor:pointer;transition:background .2s;color:#fff}
+.qa-item:hover{background:rgba(255,179,0,.25)}
+.qa-icon{font-size:22px;margin-bottom:7px;color:var(--gold)}
+.qa-label{font-size:11px;font-weight:600;line-height:1.3;opacity:.9}
+
+/* MAIN GRID */
+.main-wrap{max-width:1200px;margin:0 auto;padding:28px 20px}
+.main-grid{display:flex;gap:24px}
+.main-col{flex:1;min-width:0}
+.main-side{width:320px;flex-shrink:0}
+/* section header */
+.sh{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+.sh-bar{width:4px;height:22px;background:linear-gradient(to bottom,var(--navy),var(--blue));border-radius:2px;flex-shrink:0}
+.sh h3{font-family:'Roboto',sans-serif;font-size:15px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px}
+.sh .more{margin-left:auto;font-size:12px;color:var(--blue);font-weight:600;display:flex;align-items:center;gap:4px}
+.sh .more:hover{color:var(--navy)}
+
+/* News featured */
+.nf{border-radius:6px;overflow:hidden;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);margin-bottom:20px;border:1px solid var(--border)}
+.nf-img{height:240px;position:relative;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;overflow:hidden}
+.nf-img i{font-size:64px;color:rgba(255,255,255,.12)}
+.nf-badge{position:absolute;top:14px;left:14px;background:var(--red);color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;padding:4px 10px;border-radius:2px;letter-spacing:.5px}
+.nf-date{position:absolute;bottom:14px;right:14px;background:rgba(0,0,0,.5);color:#fff;font-size:11px;padding:3px 9px;border-radius:2px}
+.nf-body{padding:16px 18px 18px}
+.nf-body h3{font-size:17px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:8px;cursor:pointer}
+.nf-body h3:hover{color:var(--blue)}
+.nf-body p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:12px}
+.nmeta{display:flex;align-items:center;gap:14px;font-size:11.5px;color:var(--muted)}
+.nmeta span{display:flex;align-items:center;gap:4px}
+.nmeta i{color:var(--gold);font-size:11px}
+.nmeta .rm{margin-left:auto;color:var(--blue);font-weight:600;font-size:12px;display:flex;align-items:center;gap:4px}
+
+/* News list */
+.nl{display:flex;flex-direction:column}
+.nli{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.nli:last-child{border-bottom:none}
+.nl-thumb{width:100px;height:70px;flex-shrink:0;border-radius:4px;overflow:hidden;background:var(--light);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--muted)}
+.nl-body{flex:1}
+.ncat{display:inline-block;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 8px;border-radius:2px;margin-bottom:5px;color:#fff;background:var(--blue)}
+.ncat.r{background:var(--red)}.ncat.g{background:var(--green)}.ncat.o{background:#E65100}.ncat.p{background:#6A1B9A}
+.nl-title{font-size:13px;font-weight:600;color:var(--text);line-height:1.5;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
+.nl-title:hover{color:var(--blue)}
+
+/* SIDEBAR */
+.sbar{display:flex;flex-direction:column;gap:22px}
+.sbox{background:#fff;border:1px solid var(--border);border-radius:5px;overflow:hidden}
+.sbox-h{background:var(--navy);color:#fff;padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
+.sbox-h h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:7px}
+.sbox-h h4 i{color:var(--gold);font-size:13px}
+.sbox-h a{font-size:11px;color:rgba(255,255,255,.75)}
+.sbox-h a:hover{color:var(--gold)}
+/* pengumuman */
+.pi{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);align-items:flex-start;transition:background .15s}
+.pi:last-child{border-bottom:none}
+.pi:hover{background:var(--light)}
+.pd{background:var(--navy);color:#fff;border-radius:3px;text-align:center;padding:5px 7px;min-width:40px;flex-shrink:0}
+.pd .pdd{font-size:17px;font-weight:800;line-height:1}
+.pd .pdm{font-size:9px;text-transform:uppercase;opacity:.85}
+.pt{font-size:12px;line-height:1.5;color:var(--text)}
+.pt:hover{color:var(--blue)}
+/* agenda */
+.agi{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);align-items:flex-start;transition:background .15s}
+.agi:last-child{border-bottom:none}
+.agi:hover{background:var(--light)}
+.ag-ic{color:var(--gold);font-size:18px;flex-shrink:0;margin-top:1px}
+.ag-info p{font-size:12px;line-height:1.5;font-weight:600;color:var(--text)}
+.ag-info span{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px;margin-top:2px}
+/* harga */
+.htbl{width:100%;border-collapse:collapse;font-size:12px}
+.htbl thead th{background:var(--navy);color:#fff;padding:8px 10px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase}
+.htbl tbody tr{transition:background .12s}
+.htbl tbody tr:hover td{background:var(--light)}
+.htbl td{padding:8px 10px;border-bottom:1px solid var(--border)}
+.htbl tbody tr:last-child td{border-bottom:none}
+.h-up{color:#1B5E20;font-weight:700;white-space:nowrap}
+.h-dn{color:var(--red);font-weight:700;white-space:nowrap}
+.h-sm{color:var(--muted)}
+.h-upd{padding:7px 14px;background:var(--light);font-size:11px;color:var(--muted);display:flex;align-items:center;gap:5px;border-top:1px solid var(--border)}
+
+/* IKM */
+.ikm-sec{background:var(--light);padding:28px 0}
+.ikm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.ikm-card{background:#fff;border:1px solid var(--border);border-radius:5px;overflow:hidden;transition:box-shadow .2s,transform .2s;cursor:pointer}
+.ikm-card:hover{box-shadow:0 6px 24px rgba(0,48,135,.12);transform:translateY(-3px)}
+.ikm-img{height:130px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.2);font-size:40px;position:relative}
+.ikm-tag{position:absolute;top:8px;left:8px;background:var(--gold);color:var(--navy);font-size:9px;font-weight:700;padding:2px 7px;border-radius:2px;text-transform:uppercase}
+.ikm-body{padding:12px}
+.ikm-body h4{font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.ikm-body p{font-size:11px;color:var(--muted)}
+
+/* GALERI */
+.gal-sec{padding:28px 0}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.gi{border-radius:5px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:16/10}
+.gi .gb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:32px;color:rgba(255,255,255,.22);transition:transform .3s}
+.gi:hover .gb{transform:scale(1.05)}
+.gi .gov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 60%);display:flex;align-items:flex-end;padding:12px;opacity:0;transition:opacity .3s}
+.gi:hover .gov{opacity:1}
+.gi .gov span{color:#fff;font-size:12px;font-weight:600}
+.gi:nth-child(1) .gb{background:linear-gradient(135deg,#003087,#1565C0)}
+.gi:nth-child(2) .gb{background:linear-gradient(135deg,#1b5e20,#388e3c)}
+.gi:nth-child(3) .gb{background:linear-gradient(135deg,#b71c1c,#d32f2f)}
+.gi:nth-child(4) .gb{background:linear-gradient(135deg,#e65100,#ef6c00)}
+.gi:nth-child(5) .gb{background:linear-gradient(135deg,#4a148c,#7b1fa2)}
+.gi:nth-child(6) .gb{background:linear-gradient(135deg,#006064,#00838f)}
+.gi.big{grid-column:span 2}
+
+/* PARTNER */
+.partner{background:var(--navy);padding:20px 0}
+.partner .ph{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.partner .ph .pbar{width:4px;height:20px;background:var(--gold);border-radius:2px}
+.partner .ph h3{font-size:14px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px}
+.pscroll{display:flex;gap:10px;flex-wrap:wrap}
+.pitem{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:10px 16px;color:rgba(255,255,255,.85);font-size:11.5px;display:flex;align-items:center;gap:8px;transition:background .2s,border-color .2s;cursor:pointer;white-space:nowrap}
+.pitem:hover{background:rgba(255,179,0,.2);border-color:var(--gold);color:#fff}
+.pitem i{color:var(--gold);font-size:14px}
+
+/* FOOTER */
+.footer{background:var(--dark);color:rgba(255,255,255,.72)}
+.footer-main{max-width:1200px;margin:0 auto;padding:40px 20px 30px}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.1fr;gap:36px}
+.fbrand-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.f-lic{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:22px;color:var(--gold)}
+.f-bn{font-size:13px;font-weight:700;color:#fff;line-height:1.3;text-transform:uppercase}
+.f-bs{font-size:11px;color:rgba(255,255,255,.45);margin-top:2px}
+.fdesc{font-size:12px;line-height:1.8;margin-bottom:16px;color:rgba(255,255,255,.58)}
+.fct{list-style:none;display:flex;flex-direction:column;gap:8px}
+.fct li{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:rgba(255,255,255,.62)}
+.fct li i{color:var(--gold);font-size:13px;flex-shrink:0;margin-top:1px}
+.fsoc{display:flex;gap:8px;margin-top:16px}
+.fsc{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:14px;transition:background .2s,color .2s}
+.fsc:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.fcol h5{font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.7px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:flex;align-items:center;gap:6px}
+.fcol h5 i{color:var(--gold);font-size:12px}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:0}
+.flinks li a{display:flex;align-items:center;gap:6px;padding:5px 0;font-size:12px;color:rgba(255,255,255,.58);border-bottom:1px dotted rgba(255,255,255,.07);transition:color .15s,padding-left .15s}
+.flinks li:last-child a{border-bottom:none}
+.flinks li a:hover{color:var(--gold);padding-left:5px}
+.flinks li a i{font-size:10px;color:var(--gold);flex-shrink:0}
+.fbot{background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.08)}
+.fbot .container{display:flex;justify-content:space-between;align-items:center;padding-top:14px;padding-bottom:14px;flex-wrap:wrap;gap:8px}
+.fbot p{font-size:11px;color:rgba(255,255,255,.4)}
+.fbl{display:flex;gap:16px}
+.fbl a{font-size:11px;color:rgba(255,255,255,.4)}
+.fbl a:hover{color:var(--gold)}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .main-grid{flex-direction:column}.main-side{width:100%}
+  .ikm-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .qa-grid{grid-template-columns:repeat(3,1fr)}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .gi.big{grid-column:span 1}
+}
+@media(max-width:768px){
+  .topbar-left{display:none}
+  .hero-slide{height:320px}.s-cnt{padding:0 40px}.s-cnt h2{font-size:22px}
+  .htstrip{display:none}
+  .qa-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:540px){
+  .h-logos{display:none}
+  .footer-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:1fr}
+  .ikm-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <a href="#"><i class="fa fa-home"></i> Beranda</a>
+      <a href="#"><i class="fa fa-phone"></i> (022) 4230897</a>
+      <a href="#"><i class="fa fa-envelope"></i> disperindag@jabarprov.go.id</a>
+      <a href="#"><i class="fa fa-map-marker-alt"></i> Jl. Asia Afrika No. 146, Bandung</a>
+      <a href="#"><i class="fa fa-clock"></i> Senin–Jumat 08.00–16.00 WIB</a>
+    </div>
+    <div class="topbar-right">
+      <div class="socials">
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <a href="#" class="btn-wbs"><i class="fa fa-exclamation-triangle"></i> FORM - WBS</a>
+      <a href="#" class="btn-ppid"><i class="fa fa-lock"></i> PPID</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="hinner">
+    <div class="header-brand">
+      <!-- Logo Disperindag Jabar -->
+      <img class="logo-wrap" src="https://d2s1u1uyrl4yfi.cloudfront.net/disperindag/logo/2c2d9019ef86e7809090691e9e0c921e.png" style="height:70px;width:150px;object-fit:contain;" alt="Logo Disperindag Jawa Barat"/>
+      <div class="brand-text">
+        <div class="bn">Dinas Perindustrian dan Perdagangan</div>
+        <div class="bs">Provinsi Jawa Barat</div>
+        <div class="bt">Pemerintah Daerah Provinsi Jawa Barat</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="h-srch">
+        <input type="text" placeholder="Cari informasi..."/>
+        <button type="button"><i class="fa fa-search"></i></button>
+      </div>
+      <div class="h-logos">
+        <div class="lp">JABAR</div>
+        <div class="lp">KMPR</div>
+        <div class="lp">KDAG</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="ninner">
+      <a href="#" class="nav-home"><i class="fa fa-home"></i> Beranda</a>
+      <div class="nav-items">
+
+        <!-- Profile -->
+        <div class="ni">
+          <a href="#">Profile <i class="fa fa-chevron-down"></i></a>
+          <div class="drop-wide">
+            <div class="dcol">
+              <span class="dgl">Tentang Kami</span>
+              <a href="#"><i class="fa fa-angle-right"></i> Visi dan Misi Provinsi Jawa Barat</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Alamat Lengkap</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Ruang Lingkup</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Maksud dan Tujuan</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Tugas dan Fungsi</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Struktur Organisasi</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Pejabat Struktural</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Rencana Kerja</a>
+            </div>
+            <div class="dcol">
+              <span class="dgl">Unit Kerja</span>
+              <a href="#"><i class="fa fa-angle-right"></i> Sekretariat</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Bidang Industri AKTA</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Bidang ILMATE</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Bidang Perdagangan Luar Negeri (PLN)</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Bidang Perdagangan Dalam Negeri (PDN)</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Bidang Perlindungan Konsumen</a>
+            </div>
+            <div class="dcol">
+              <span class="dgl">UPTD</span>
+              <a href="#"><i class="fa fa-angle-right"></i> UPTD Industri Logam</a>
+              <a href="#"><i class="fa fa-angle-right"></i> UPTD Industri Pangan, Olahan dan Kemasan</a>
+              <a href="#"><i class="fa fa-angle-right"></i> UPTD BPSMB-Le Karawang</a>
+              <a href="#"><i class="fa fa-angle-right"></i> UPTD BPSMB-KTG Bogor</a>
+              <a href="#"><i class="fa fa-angle-right"></i> UPTD BPSMB-AGRO Bandung</a>
+              <a href="#"><i class="fa fa-angle-right"></i> UPTD BPSMB-AMDK Cirebon</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Informasi -->
+        <div class="ni">
+          <a href="#">Informasi <i class="fa fa-chevron-down"></i></a>
+          <div class="drop-wide">
+            <div class="dcol">
+              <span class="dgl">Informasi Umum</span>
+              <a href="#"><i class="fa fa-angle-right"></i> LHKASN 2022</a>
+              <a href="#"><i class="fa fa-angle-right"></i> LHKPN 2022</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Program dan Kegiatan</a>
+              <a href="#"><i class="fa fa-angle-right"></i> GIS - Basisdata</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Pengumuman</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Regulasi</a>
+            </div>
+            <div class="dcol">
+              <span class="dgl">Dokumen & Data</span>
+              <a href="#"><i class="fa fa-angle-right"></i> Dokumen</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Rencana Strategis</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Agenda</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Statistik</a>
+            </div>
+            <div class="dcol">
+              <span class="dgl">Media & Harga</span>
+              <a href="#"><i class="fa fa-angle-right"></i> Harga Komoditi</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Foto Kegiatan</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Video Kegiatan</a>
+              <a href="#"><i class="fa fa-angle-right"></i> Produk IKM Jawa Barat</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pelayanan -->
+        <div class="ni">
+          <a href="#">Pelayanan <i class="fa fa-chevron-down"></i></a>
+          <div class="drop">
+            <a href="#"><i class="fa fa-angle-right"></i> Layanan</a>
+          </div>
+        </div>
+
+        <!-- Berita -->
+        <div class="ni">
+          <a href="#">Berita <i class="fa fa-chevron-down"></i></a>
+          <div class="drop">
+            <a href="#"><i class="fa fa-angle-right"></i> Berita Internal</a>
+            <a href="#"><i class="fa fa-angle-right"></i> Berita Eksternal</a>
+          </div>
+        </div>
+
+        <!-- Konsultasi -->
+        <div class="ni"><a href="#">Konsultasi</a></div>
+
+        <!-- PPID -->
+        <div class="ni"><a href="#">PPID</a></div>
+
+        <!-- FORM-WBS -->
+        <div class="ni">
+          <a href="#">FORM - WBS <i class="fa fa-chevron-down"></i></a>
+          <div class="drop">
+            <a href="#"><i class="fa fa-angle-right"></i> WBS - Whistleblowing System</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-track" id="heroTrack">
+    <div class="hero-slide slide-1">
+      <div class="s-bg"></div><div class="s-ov"></div><div class="s-deco"></div>
+      <div class="s-cnt">
+        <div class="s-badge">Selamat Datang</div>
+        <h2>Dinas Perindustrian &amp; Perdagangan Provinsi Jawa Barat</h2>
+        <p>Mewujudkan industri dan perdagangan yang berdaya saing, inovatif, dan berkelanjutan untuk kesejahteraan masyarakat Jawa Barat.</p>
+        <a href="#" class="s-btn"><i class="fa fa-info-circle"></i> Selengkapnya</a>
+      </div>
+    </div>
+    <div class="hero-slide slide-2">
+      <div class="s-bg"></div><div class="s-ov"></div><div class="s-deco"></div>
+      <div class="s-cnt">
+        <div class="s-badge">Program Unggulan</div>
+        <h2>Pengembangan Industri Kecil Menengah (IKM) Jawa Barat</h2>
+        <p>Program pemberdayaan dan peningkatan daya saing IKM di 27 kabupaten/kota se-Jawa Barat menuju pasar global.</p>
+        <a href="#" class="s-btn"><i class="fa fa-industry"></i> Produk IKM</a>
+      </div>
+    </div>
+    <div class="hero-slide slide-3">
+      <div class="s-bg"></div><div class="s-ov"></div><div class="s-deco"></div>
+      <div class="s-cnt">
+        <div class="s-badge">Harga Komoditi</div>
+        <h2>Pantau Harga Bahan Pokok Harian di Jawa Barat</h2>
+        <p>Informasi harga komoditi terkini dan terupdate setiap hari di seluruh pasar Jawa Barat untuk perlindungan konsumen.</p>
+        <a href="#" class="s-btn"><i class="fa fa-chart-line"></i> Lihat Harga</a>
+      </div>
+    </div>
+  </div>
+  <button class="hero-prev" onclick="hSl(-1)"><i class="fa fa-chevron-left"></i></button>
+  <button class="hero-next" onclick="hSl(1)"><i class="fa fa-chevron-right"></i></button>
+  <div class="hero-dots">
+    <button class="hd on" onclick="hGo(0)"></button>
+    <button class="hd" onclick="hGo(1)"></button>
+    <button class="hd" onclick="hGo(2)"></button>
+  </div>
+  <div class="htstrip">
+    <div class="ht on" onclick="hGo(0)"><div class="htbg t1"><i class="fa fa-building"></i></div></div>
+    <div class="ht" onclick="hGo(1)"><div class="htbg t2"><i class="fa fa-industry"></i></div></div>
+    <div class="ht" onclick="hGo(2)"><div class="htbg t3"><i class="fa fa-tags"></i></div></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="container">
+    <div class="tk-label"><i class="fa fa-bullhorn"></i> &nbsp;INFO TERKINI</div>
+    <div class="tk-wrap">
+      <div class="tk-inner">
+        <span class="tk-item">Disperindag Jabar Gelar Bimtek IKM Pangan Olahan Kabupaten Bogor</span>
+        <span class="tk-item">Harga Beras di Jawa Barat Stabil — Update 17 Maret 2025</span>
+        <span class="tk-item">West Java Industrial Summit 2025 — Pendaftaran Dibuka!</span>
+        <span class="tk-item">UPTD BPSMB Karawang Raih Akreditasi ISO/IEC 17025:2017 dari KAN</span>
+        <span class="tk-item">Operasi Pasar Murah Ramadan di 27 Kab/Kota Jawa Barat Dimulai</span>
+        <span class="tk-item">Layanan Perizinan Industri Kini Tersedia di OSS-RBA — Daftar Online Sekarang</span>
+        <span class="tk-item">Disperindag Jabar Gelar Bimtek IKM Pangan Olahan Kabupaten Bogor</span>
+        <span class="tk-item">Harga Beras di Jawa Barat Stabil — Update 17 Maret 2025</span>
+        <span class="tk-item">West Java Industrial Summit 2025 — Pendaftaran Dibuka!</span>
+        <span class="tk-item">UPTD BPSMB Karawang Raih Akreditasi ISO/IEC 17025:2017 dari KAN</span>
+        <span class="tk-item">Operasi Pasar Murah Ramadan di 27 Kab/Kota Jawa Barat Dimulai</span>
+        <span class="tk-item">Layanan Perizinan Industri Kini Tersedia di OSS-RBA — Daftar Online Sekarang</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK ACCESS -->
+<div class="qa">
+  <div class="container">
+    <div class="qa-grid">
+      <div class="qa-item"><div class="qa-icon"><i class="fa fa-industry"></i></div><div class="qa-label">Perizinan Industri</div></div>
+      <div class="qa-item"><div class="qa-icon"><i class="fa fa-store"></i></div><div class="qa-label">Perizinan Perdagangan</div></div>
+      <div class="qa-item"><div class="qa-icon"><i class="fa fa-chart-line"></i></div><div class="qa-label">Harga Komoditi</div></div>
+      <div class="qa-item"><div class="qa-icon"><i class="fa fa-map-marked-alt"></i></div><div class="qa-label">GIS Basisdata</div></div>
+      <div class="qa-item"><div class="qa-icon"><i class="fa fa-shield-alt"></i></div><div class="qa-label">Perlindungan Konsumen</div></div>
+      <div class="qa-item"><div class="qa-icon"><i class="fa fa-flask"></i></div><div class="qa-label">Pengujian Mutu BPSMB</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-wrap">
+  <div class="main-grid">
+
+    <!-- LEFT -->
+    <div class="main-col">
+      <div class="sh">
+        <div class="sh-bar"></div>
+        <h3><i class="fa fa-newspaper" style="color:var(--gold);font-size:14px"></i>&nbsp; Berita Terkini</h3>
+        <a href="#" class="more">Lihat Semua <i class="fa fa-arrow-right"></i></a>
+      </div>
+
+      <!-- Featured -->
+      <div class="nf">
+        <div class="nf-img">
+          <i class="fa fa-image"></i>
+          <div class="nf-badge">Berita Utama</div>
+          <div class="nf-date"><i class="fa fa-calendar"></i> 15 Maret 2025</div>
+        </div>
+        <div class="nf-body">
+          <h3>Gubernur Jabar Resmikan Pusat Inovasi Industri Tekstil dan Alas Kaki di Kota Bandung</h3>
+          <p>Gubernur Jawa Barat meresmikan Pusat Inovasi Industri Tekstil dan Alas Kaki di Kota Bandung. Fasilitas ini diharapkan mampu meningkatkan kompetensi pelaku IKM tekstil dan alas kaki sehingga mampu bersaing di pasar nasional maupun global.</p>
+          <div class="nmeta">
+            <span><i class="fa fa-calendar"></i> 15 Maret 2025</span>
+            <span><i class="fa fa-user"></i> Admin Disperindag</span>
+            <span><i class="fa fa-eye"></i> 1.247 views</span>
+            <a href="#" class="rm">Baca Selengkapnya <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- News List -->
+      <div class="nl">
+        <div class="nli">
+          <div class="nl-thumb" style="background:linear-gradient(135deg,#003087,#1565C0)"><i class="fa fa-image"></i></div>
+          <div class="nl-body"><span class="ncat">Berita Internal</span><div class="nl-title">Disperindag Jabar Gelar Bimtek Peningkatan Kompetensi IKM Alas Kaki Kabupaten Bogor</div><div class="nmeta"><span><i class="fa fa-calendar"></i> 12 Mar 2025</span><span><i class="fa fa-eye"></i> 342</span></div></div>
+        </div>
+        <div class="nli">
+          <div class="nl-thumb" style="background:linear-gradient(135deg,#b71c1c,#d32f2f)"><i class="fa fa-image"></i></div>
+          <div class="nl-body"><span class="ncat r">Berita Eksternal</span><div class="nl-title">Harga Beras di Jawa Barat Kembali Stabil Pasca Operasi Pasar Murah Ramadan 1446H</div><div class="nmeta"><span><i class="fa fa-calendar"></i> 10 Mar 2025</span><span><i class="fa fa-eye"></i> 510</span></div></div>
+        </div>
+        <div class="nli">
+          <div class="nl-thumb" style="background:linear-gradient(135deg,#1b5e20,#388e3c)"><i class="fa fa-image"></i></div>
+          <div class="nl-body"><span class="ncat g">UPTD</span><div class="nl-title">UPTD BPSMB Karawang Terima Sertifikat Akreditasi ISO/IEC 17025:2017 dari Komite Akreditasi Nasional</div><div class="nmeta"><span><i class="fa fa-calendar"></i> 8 Mar 2025</span><span><i class="fa fa-eye"></i> 278</span></div></div>
+        </div>
+        <div class="nli">
+          <div class="nl-thumb" style="background:linear-gradient(135deg,#4a148c,#7b1fa2)"><i class="fa fa-image"></i></div>
+          <div class="nl-body"><span class="ncat p">Perdagangan</span><div class="nl-title">Nilai Ekspor Non-Migas Jawa Barat Meningkat 12,4% pada Kuartal Pertama Tahun 2025</div><div class="nmeta"><span><i class="fa fa-calendar"></i> 5 Mar 2025</span><span><i class="fa fa-eye"></i> 445</span></div></div>
+        </div>
+        <div class="nli">
+          <div class="nl-thumb" style="background:linear-gradient(135deg,#e65100,#ef6c00)"><i class="fa fa-image"></i></div>
+          <div class="nl-body"><span class="ncat o">Konsumen</span><div class="nl-title">Sidak Pasar Jelang Ramadan: Disperindag Jabar Temukan 23 Produk Kedaluwarsa di 5 Kabupaten</div><div class="nmeta"><span><i class="fa fa-calendar"></i> 3 Mar 2025</span><span><i class="fa fa-eye"></i> 689</span></div></div>
+        </div>
+        <div class="nli">
+          <div class="nl-thumb" style="background:linear-gradient(135deg,#006064,#00838f)"><i class="fa fa-image"></i></div>
+          <div class="nl-body"><span class="ncat">Industri</span><div class="nl-title">Rapat Koordinasi Peningkatan Ekspor Produk IKM Jawa Barat Bersama LPEI dan Kementerian Perdagangan RI</div><div class="nmeta"><span><i class="fa fa-calendar"></i> 1 Mar 2025</span><span><i class="fa fa-eye"></i> 312</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="main-side">
+      <div class="sbar">
+
+        <!-- Pengumuman -->
+        <div class="sbox">
+          <div class="sbox-h"><h4><i class="fa fa-bullhorn"></i> Pengumuman</h4><a href="#">Semua &rarr;</a></div>
+          <div>
+            <a href="#" class="pi"><div class="pd"><div class="pdd">17</div><div class="pdm">Mar</div></div><div class="pt">Pengumuman Seleksi Terbuka JPT Pratama Lingkup Disperindag Jabar Tahun 2025</div></a>
+            <a href="#" class="pi"><div class="pd"><div class="pdd">14</div><div class="pdm">Mar</div></div><div class="pt">Jadwal Pelaksanaan Bimtek Pengolahan Pangan IKM Kabupaten Cianjur Maret 2025</div></a>
+            <a href="#" class="pi"><div class="pd"><div class="pdd">10</div><div class="pdm">Mar</div></div><div class="pt">Pendaftaran Peserta West Java Industrial Expo 2025 Dibuka Mulai 1 April 2025</div></a>
+            <a href="#" class="pi"><div class="pd"><div class="pdd">05</div><div class="pdm">Mar</div></div><div class="pt">Penerimaan Berkas SIUP dan TDP Beralih ke OSS-RBA Mulai 1 April 2025</div></a>
+            <a href="#" class="pi"><div class="pd"><div class="pdd">28</div><div class="pdm">Feb</div></div><div class="pt">Pengumuman Hasil Seleksi Pelatihan Wirausaha IKM Batch 2 Tahun 2025</div></a>
+          </div>
+        </div>
+
+        <!-- Agenda -->
+        <div class="sbox">
+          <div class="sbox-h"><h4><i class="fa fa-calendar-alt"></i> Agenda</h4><a href="#">Semua &rarr;</a></div>
+          <div>
+            <div class="agi"><div class="ag-ic"><i class="fa fa-calendar-check"></i></div><div class="ag-info"><p>Rapat Koordinasi Harga Komoditi Tingkat Provinsi Jawa Barat</p><span><i class="fa fa-clock"></i> 18 Maret 2025 &bull; 09.00 WIB</span></div></div>
+            <div class="agi"><div class="ag-ic"><i class="fa fa-calendar-check"></i></div><div class="ag-info"><p>Bimtek IKM Industri Kreatif Kota Bandung 2025</p><span><i class="fa fa-clock"></i> 20 Maret 2025 &bull; 08.00 WIB</span></div></div>
+            <div class="agi"><div class="ag-ic"><i class="fa fa-calendar-check"></i></div><div class="ag-info"><p>Forum Diskusi Pengembangan Ekspor IKM Jawa Barat</p><span><i class="fa fa-clock"></i> 25 Maret 2025 &bull; 10.00 WIB</span></div></div>
+            <div class="agi"><div class="ag-ic"><i class="fa fa-calendar-check"></i></div><div class="ag-info"><p>Operasi Pasar Murah Ramadan — Kabupaten Garut</p><span><i class="fa fa-clock"></i> 27 Maret 2025 &bull; 07.30 WIB</span></div></div>
+          </div>
+        </div>
+
+        <!-- Harga Komoditi -->
+        <div class="sbox">
+          <div class="sbox-h"><h4><i class="fa fa-tags"></i> Harga Komoditi</h4><a href="#">Detail &rarr;</a></div>
+          <div>
+            <table class="htbl">
+              <thead><tr><th>Komoditi</th><th>Harga</th><th>Trend</th></tr></thead>
+              <tbody>
+                <tr><td>Beras Premium</td><td>Rp 14.500/kg</td><td class="h-sm">&#8213;</td></tr>
+                <tr><td>Beras Medium</td><td>Rp 12.800/kg</td><td class="h-sm">&#8213;</td></tr>
+                <tr><td>Gula Pasir</td><td>Rp 17.000/kg</td><td class="h-up">&#9650; 2%</td></tr>
+                <tr><td>Minyak Goreng</td><td>Rp 15.800/L</td><td class="h-dn">&#9660; 1%</td></tr>
+                <tr><td>Daging Sapi</td><td>Rp 138.000/kg</td><td class="h-up">&#9650; 1%</td></tr>
+                <tr><td>Daging Ayam</td><td>Rp 38.500/kg</td><td class="h-dn">&#9660; 3%</td></tr>
+                <tr><td>Telur Ayam</td><td>Rp 29.000/kg</td><td class="h-sm">&#8213;</td></tr>
+                <tr><td>Bawang Merah</td><td>Rp 42.000/kg</td><td class="h-up">&#9650; 5%</td></tr>
+                <tr><td>Bawang Putih</td><td>Rp 38.000/kg</td><td class="h-dn">&#9660; 2%</td></tr>
+                <tr><td>Cabai Merah</td><td>Rp 65.000/kg</td><td class="h-dn">&#9660; 8%</td></tr>
+                <tr><td>Cabai Rawit</td><td>Rp 78.000/kg</td><td class="h-dn">&#9660; 5%</td></tr>
+                <tr><td>Tepung Terigu</td><td>Rp 11.000/kg</td><td class="h-sm">&#8213;</td></tr>
+              </tbody>
+            </table>
+            <div class="h-upd"><i class="fa fa-sync-alt"></i> Update: 17 Maret 2025, 08.00 WIB</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PRODUK IKM -->
+<section class="ikm-sec">
+  <div class="container">
+    <div class="sh">
+      <div class="sh-bar"></div>
+      <h3><i class="fa fa-box-open" style="color:var(--gold);font-size:14px"></i>&nbsp; Produk IKM Jawa Barat</h3>
+      <a href="#" class="more">Lihat Semua <i class="fa fa-arrow-right"></i></a>
+    </div>
+    <div class="ikm-grid">
+      <div class="ikm-card">
+        <div class="ikm-img" style="background:linear-gradient(135deg,#003087,#1565C0)"><i class="fa fa-tshirt"></i><div class="ikm-tag">Tekstil</div></div>
+        <div class="ikm-body"><h4>Batik Garutan</h4><p>Kab. Garut — Tekstil &amp; Fashion</p></div>
+      </div>
+      <div class="ikm-card">
+        <div class="ikm-img" style="background:linear-gradient(135deg,#1b5e20,#388e3c)"><i class="fa fa-leaf"></i><div class="ikm-tag">Pangan</div></div>
+        <div class="ikm-body"><h4>Dodol Garut</h4><p>Kab. Garut — Pangan Olahan</p></div>
+      </div>
+      <div class="ikm-card">
+        <div class="ikm-img" style="background:linear-gradient(135deg,#b71c1c,#d32f2f)"><i class="fa fa-gem"></i><div class="ikm-tag">Kerajinan</div></div>
+        <div class="ikm-body"><h4>Keramik Plered</h4><p>Kab. Purwakarta — Kerajinan</p></div>
+      </div>
+      <div class="ikm-card">
+        <div class="ikm-img" style="background:linear-gradient(135deg,#e65100,#ef6c00)"><i class="fa fa-shoe-prints"></i><div class="ikm-tag">Alas Kaki</div></div>
+        <div class="ikm-body"><h4>Sepatu Cibaduyut</h4><p>Kota Bandung — Alas Kaki</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERI -->
+<section class="gal-sec">
+  <div class="container">
+    <div class="sh">
+      <div class="sh-bar"></div>
+      <h3><i class="fa fa-images" style="color:var(--gold);font-size:14px"></i>&nbsp; Foto Kegiatan</h3>
+      <a href="#" class="more">Galeri Lengkap <i class="fa fa-arrow-right"></i></a>
+    </div>
+    <div class="gal-grid">
+      <div class="gi big"><div class="gb"><i class="fa fa-camera"></i></div><div class="gov"><span>Peresmian Pusat Inovasi Industri Tekstil Bandung</span></div></div>
+      <div class="gi"><div class="gb"><i class="fa fa-camera"></i></div><div class="gov"><span>Bimtek IKM Pangan Olahan 2025</span></div></div>
+      <div class="gi"><div class="gb"><i class="fa fa-camera"></i></div><div class="gov"><span>Operasi Pasar Murah Ramadan</span></div></div>
+      <div class="gi"><div class="gb"><i class="fa fa-camera"></i></div><div class="gov"><span>Sidak Pasar Jelang Lebaran</span></div></div>
+      <div class="gi"><div class="gb"><i class="fa fa-camera"></i></div><div class="gov"><span>Pameran Produk IKM Jawa Barat</span></div></div>
+      <div class="gi"><div class="gb"><i class="fa fa-play-circle"></i></div><div class="gov"><span>&#9654; Video Kegiatan</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER LINKS -->
+<div class="partner">
+  <div class="container">
+    <div class="ph"><div class="pbar"></div><h3>Link Terkait</h3></div>
+    <div class="pscroll">
+      <a href="#" class="pitem"><i class="fa fa-building"></i> Pemprov Jawa Barat</a>
+      <a href="#" class="pitem"><i class="fa fa-industry"></i> Kementerian Perindustrian RI</a>
+      <a href="#" class="pitem"><i class="fa fa-store"></i> Kementerian Perdagangan RI</a>
+      <a href="#" class="pitem"><i class="fa fa-shield-alt"></i> BPOM RI</a>
+      <a href="#" class="pitem"><i class="fa fa-globe"></i> LPEI — Eximbank</a>
+      <a href="#" class="pitem"><i class="fa fa-certificate"></i> BSN — SNI</a>
+      <a href="#" class="pitem"><i class="fa fa-university"></i> Bank Indonesia</a>
+      <a href="#" class="pitem"><i class="fa fa-chart-bar"></i> BPS Jawa Barat</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="footer-grid">
+      <div>
+        <div class="fbrand-top">
+          <div class="f-lic"><i class="fa fa-landmark"></i></div>
+          <div><div class="f-bn">Dinas Perindustrian dan Perdagangan</div><div class="f-bs">Provinsi Jawa Barat</div></div>
+        </div>
+        <p class="fdesc">Dinas Perindustrian dan Perdagangan Provinsi Jawa Barat adalah perangkat daerah yang melaksanakan urusan pemerintahan bidang perindustrian dan perdagangan di Provinsi Jawa Barat untuk mewujudkan masyarakat yang sejahtera dan berdaya saing.</p>
+        <ul class="fct">
+          <li><i class="fa fa-map-marker-alt"></i> Jl. Asia Afrika No. 146, Kota Bandung, Jawa Barat 40261</li>
+          <li><i class="fa fa-phone"></i> (022) 4230897 &nbsp;|&nbsp; Fax: (022) 4200331</li>
+          <li><i class="fa fa-envelope"></i> disperindag@jabarprov.go.id</li>
+          <li><i class="fa fa-clock"></i> Senin – Jumat: 08.00 – 16.00 WIB</li>
+        </ul>
+        <div class="fsoc">
+          <a href="#" class="fsc"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="fsc"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="fsc"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="fsc"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="fsc"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h5><i class="fa fa-building"></i> Profile</h5>
+        <ul class="flinks">
+          <li><a href="#"><i class="fa fa-angle-right"></i> Visi dan Misi</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Alamat Lengkap</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Tugas dan Fungsi</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Unit Kerja</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Struktur Organisasi</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Pejabat Struktural</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Rencana Kerja</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> UPTD</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h5><i class="fa fa-info-circle"></i> Informasi</h5>
+        <ul class="flinks">
+          <li><a href="#"><i class="fa fa-angle-right"></i> Program dan Kegiatan</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> GIS — Basisdata</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Pengumuman</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Regulasi</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Dokumen</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Rencana Strategis</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Statistik</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Harga Komoditi</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h5><i class="fa fa-concierge-bell"></i> Layanan &amp; Lainnya</h5>
+        <ul class="flinks">
+          <li><a href="#"><i class="fa fa-angle-right"></i> Layanan Perizinan</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Perlindungan Konsumen</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Produk IKM Jawa Barat</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Foto &amp; Video Kegiatan</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Berita Internal</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Berita Eksternal</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Konsultasi</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> PPID</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> WBS — Whistleblowing</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <div class="container">
+      <p>&copy; 2025 Dinas Perindustrian dan Perdagangan Provinsi Jawa Barat. Hak Cipta Dilindungi Undang-Undang.</p>
+      <div class="fbl">
+        <a href="#">Kebijakan Privasi</a>
+        <a href="#">Disclaimer</a>
+        <a href="#">Peta Situs</a>
+        <a href="#">Aksesibilitas</a>
+        <a href="#">PPID</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+var hC=0,hT=3;
+var hTr=document.getElementById('heroTrack');
+var hDs=document.querySelectorAll('.hd');
+var hTs=document.querySelectorAll('.ht');
+function hUpd(){
+  hTr.style.transform='translateX(-'+(hC*100)+'%)';
+  hDs.forEach(function(d,i){d.classList.toggle('on',i===hC)});
+  hTs.forEach(function(t,i){t.classList.toggle('on',i===hC)});
+}
+function hSl(d){hC=(hC+d+hT)%hT;hUpd();}
+function hGo(i){hC=i;hUpd();}
+setInterval(function(){hSl(1);},6000);
+</script>
+</body>
+</html>
